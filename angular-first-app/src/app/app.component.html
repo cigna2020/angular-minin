@@ -1,10 +1,33 @@
 <div class="container">
-  <h1 >Angular Components</h1>
+  <h1>Angular Components</h1>
   <h2>h2-title to check global css</h2>
 
   <h1>Directive</h1>
-  <p appStyle="red" [dStyles]="{border: '1px solid blue', borderRadius: '5px' }">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, velit?</p>
-  <p appStyle="orange" [dStyles]="{border: '1px solid red', borderRadius: '15px' }">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, velit?</p>
+  <p appStyle="red" [dStyles]="{border: '1px solid blue', borderRadius: '5px' }">Lorem ipsum dolor sit amet, consectetur
+    adipisicing elit. Tempora, velit?</p>
+  <p appStyle="orange" [dStyles]="{border: '1px solid red', borderRadius: '15px' }">Lorem ipsum dolor sit amet,
+    consectetur adipisicing elit. Tempora, velit?</p>
+
+  <hr>
+  <br>
+  <button class="btn" (click)="isVisible = !isVisible">Toggle isVisible</button>
+  <!--  <div class="wrap" *ngIf="isVisible">-->
+  <!--    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur est exercitationem iure numquam officia-->
+  <!--      omnis praesentium reiciendis sequi vero voluptatibus.</p>-->
+  <!--  </div>-->
+
+  <!--  На самом деле код выше имеет вид, как указано ниже и это все еще работает:-->
+  <ng-template [ngIf]="isVisible">
+    <div class="wrap" *ngIf="isVisible">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur est exercitationem iure numquam officia
+        omnis praesentium reiciendis sequi vero voluptatibus.</p>
+    </div>
+  </ng-template>
+
+  <!--  Кастомная деректива с условием:-->
+  <div class="wrap" *appIfnot="isVisible">
+    <p>Кастомная деректива с условием.</p>
+  </div>
 
   <app-post-form (onAdd)="updatePosts($event)"></app-post-form>
 
@@ -15,7 +38,7 @@
     [myPost]="p"
     (onRemove)="removePost($event)">
     <div #info>
-      <small *ngIf="p.text.length > 10; else short" >Нормальной длинны пост.</small>
+      <small *ngIf="p.text.length > 10; else short">Нормальной длинны пост.</small>
       <ng-template #short>
         <small>Дай больше текста!</small>
       </ng-template>

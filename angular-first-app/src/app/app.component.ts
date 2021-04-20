@@ -14,6 +14,8 @@ export interface Post {
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  isVisible = true;
+
   posts: Post[] = [
     {
       title: 'Хочу выучить Angular компоненты',
