@@ -1,3 +1,4 @@
+/* tslint:disable:typedef */
 import {
   AfterContentChecked,
   AfterContentInit,
@@ -35,11 +36,16 @@ export class PostComponent
     OnDestroy {
   @Input() myPost: Post;
   // tslint:disable-next-line:no-output-on-prefix
+  @Output() onRemove = new EventEmitter<number>();
   @ContentChild('info', { static: true })
   infoRef: ElementRef;
 
   constructor() {
     console.log('constructor');
+  }
+
+  removePost() {
+    this.onRemove.emit(this.myPost.id);
   }
 
   ngOnChanges(changes: SimpleChanges): void {

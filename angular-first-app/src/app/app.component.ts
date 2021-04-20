@@ -1,3 +1,4 @@
+/* tslint:disable:typedef */
 import { Component } from '@angular/core';
 import { PostComponent } from './post/post.component';
 
@@ -19,18 +20,21 @@ export class AppComponent {
       text: 'Я все еще учу компоненты',
       id: 1,
     },
-    // {
-    //   title: 'Следующий блок',
-    //   text: 'Следующий блок будет про дерективы и пайпы',
-    //   id: 2,
-    // },
-    // {
-    //   title: 'Следующий блок',
-    //   text: 'Следующий блок будет про дерективы и пайпы',
-    //   id: 3,
-    // },
+    {
+      title: 'Следующий блок',
+      text: 'Следующий блок будет про дерективы и пайпы',
+      id: 2,
+    },
+    {
+      title: 'Следующий блок',
+      text: 'Следующий блок будет про дерективы и пайпы',
+      id: 3,
+    },
   ];
   updatePosts(post: Post) {
     this.posts.unshift(post);
+  }
+  removePost(id: number) {
+   this.posts = this.posts.filter(p => p.id !== id);
   }
 }
