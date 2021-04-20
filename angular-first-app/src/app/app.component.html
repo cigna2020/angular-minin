@@ -3,7 +3,8 @@
   <h2>h2-title to check global css</h2>
 
   <h1>Directive</h1>
-  <p appStyle>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, velit?</p>
+  <p appStyle="red" [dStyles]="{border: '1px solid blue', borderRadius: '5px' }">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, velit?</p>
+  <p appStyle="orange" [dStyles]="{border: '1px solid red', borderRadius: '15px' }">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, velit?</p>
 
   <app-post-form (onAdd)="updatePosts($event)"></app-post-form>
 
