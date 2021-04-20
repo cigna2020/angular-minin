@@ -5,9 +5,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { PostFormComponent } from './post-form/post-form.component';
 import { PostComponent } from './post/post.component';
+import {StyleDirectives} from './directives/style.directives';
 
 @NgModule({
-  declarations: [AppComponent, PostFormComponent, PostComponent],
+    declarations: [AppComponent, PostFormComponent, PostComponent, StyleDirectives],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],

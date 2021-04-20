@@ -1,6 +1,9 @@
 <div class="container">
-  <h1>Angular Components</h1>
+  <h1 >Angular Components</h1>
   <h2>h2-title to check global css</h2>
+
+  <h1>Directive</h1>
+  <p appStyle>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, velit?</p>
 
   <app-post-form (onAdd)="updatePosts($event)"></app-post-form>
 
@@ -11,7 +14,7 @@
     [myPost]="p"
     (onRemove)="removePost($event)">
     <div #info>
-      <small *ngIf="p.text.length > 10; else short">Нормальной длинны пост.</small>
+      <small *ngIf="p.text.length > 10; else short" >Нормальной длинны пост.</small>
       <ng-template #short>
         <small>Дай больше текста!</small>
       </ng-template>
