@@ -1,6 +1,6 @@
 /* tslint:disable:typedef */
-import { Component } from '@angular/core';
-import { PostComponent } from './post/post.component';
+import {Component} from '@angular/core';
+import {PostComponent} from './post/post.component';
 
 export interface Post {
   title: string;
@@ -31,10 +31,12 @@ export class AppComponent {
       id: 3,
     },
   ];
+
   updatePosts(post: Post) {
     this.posts.unshift(post);
   }
+
   removePost(id: number) {
-   this.posts = this.posts.filter(p => p.id !== id);
+    this.posts = this.posts.filter(p => p.id !== id);
   }
 }

@@ -2,27 +2,29 @@
 import {
   AfterContentChecked,
   AfterContentInit,
+  AfterViewChecked,
   AfterViewInit,
   Component,
   ContentChild,
   DoCheck,
   ElementRef,
+  EventEmitter,
   Input,
   OnChanges,
-  OnInit,
-  SimpleChanges,
-  AfterViewChecked,
   OnDestroy,
+  OnInit,
   Output,
-  EventEmitter
+  SimpleChanges,
+  ViewEncapsulation
 } from '@angular/core';
-import { Post } from '../app.component';
+import {Post} from '../app.component';
 
 // tslint:disable-next-line:no-conflicting-lifecycle
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class PostComponent
   implements
