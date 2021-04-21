@@ -15,6 +15,8 @@ export interface Post {
 })
 export class AppComponent {
   isVisible = true;
+  e = Math.E;
+  // e: number = 123.1234556678;
 
   posts: Post[] = [
     {
