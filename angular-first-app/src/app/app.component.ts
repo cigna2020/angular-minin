@@ -17,6 +17,7 @@ export class AppComponent {
   isVisible = true;
   e = Math.E;
   // e: number = 123.1234556678;
+  str: string = 'hello world';
 
   posts: Post[] = [
     {

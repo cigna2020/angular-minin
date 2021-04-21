@@ -1,10 +1,12 @@
 <div class="container">
   <h1>PIPES</h1>
-<p>{{ e | number}}</p>
-<p>{{ e | number:'1.0-2'}}</p>
-<p>{{ e | number:'3.0-5'}}</p>
-<p>{{ e | number:'.0-2'}}</p>
-
+  <!--<p>{{ e | number}}</p>-->
+  <!--<p>{{ e | number:'1.0-2'}}</p>-->
+  <!--<p>{{ e | number:'3.0-5'}}</p>-->
+  <!--<p>{{ e | number:'.0-2'}}</p>-->
+  <p>{{ str | uppercase | lowercase | titlecase}}</p>
+  <p>{{ str | slice:1:5}}</p>
+  <p>{{ str | slice:1:-2}}</p>
   <br>
   <hr>
 
