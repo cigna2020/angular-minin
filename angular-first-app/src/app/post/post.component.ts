@@ -43,7 +43,7 @@ export class PostComponent
   infoRef: ElementRef;
 
   constructor() {
-    console.log('constructor');
+    // console.log('constructor');
   }
 
   removePost() {
@@ -51,28 +51,28 @@ export class PostComponent
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('ngOnChanges', changes);
+    // console.log('ngOnChanges', changes);
   }
   ngOnInit(): void {
     // console.log(this.infoRef.nativeElement);
-    console.log('ngOnInit');
+    // console.log('ngOnInit');
   }
   ngDoCheck(): void {
-    console.log('ngDoCheck');
+    // console.log('ngDoCheck');
   }
   ngAfterContentInit(): void {
-    console.log('ngAfterContentInit');
+    // console.log('ngAfterContentInit');
   }
   ngAfterContentChecked(): void {
-    console.log('ngAfterContentChecked');
+    // console.log('ngAfterContentChecked');
   }
   ngAfterViewInit(): void {
-    console.log('ngAfterViewInit');
+    // console.log('ngAfterViewInit');
   }
   ngAfterViewChecked(): void {
-    console.log('ngAfterViewChecked');
+    // console.log('ngAfterViewChecked');
   }
   ngOnDestroy(): void {
-    console.log('ngOnDestroy');
+    // console.log('ngOnDestroy');
   }
 }
