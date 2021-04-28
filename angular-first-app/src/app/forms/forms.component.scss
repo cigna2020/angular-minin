@@ -1,0 +1,14 @@
+input {
+  &.ng-touched.ng-dirty.ng-invalid {
+    border: 1px solid red;
+  }
+
+  &.ng-valid {
+    border: 1px solid green;
+  }
+}
+
+button:disabled {
+  cursor: not-allowed;
+  background: #ccc;
+}
