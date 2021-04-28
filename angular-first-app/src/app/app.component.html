@@ -1,4 +1,7 @@
 <div class="container">
+
+  <app-forms></app-forms>
+
   <h1>PIPES</h1>
   <!--<p>{{ e | number}}</p>-->
   <!--<p>{{ e | number:'1.0-2'}}</p>-->
@@ -57,5 +60,11 @@
       </ng-template>
     </div>
   </app-post>
+
+  <div class="card">
+    <div>Global counter: {{ appCounterService.counter }}</div>
+    <button class="btn" (click)="appCounterService.increase()">+</button>
+    <button class="btn" (click)="appCounterService.decrease()">-</button>
+  </div>
 
 </div>

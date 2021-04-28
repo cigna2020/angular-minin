@@ -18,6 +18,7 @@ import {
   ViewEncapsulation
 } from '@angular/core';
 import {Post} from '../app.component';
+import {AppCounterService} from '../services/app-counter.service';
 
 // tslint:disable-next-line:no-conflicting-lifecycle
 @Component({
@@ -42,7 +43,7 @@ export class PostComponent
   @ContentChild('info', { static: true })
   infoRef: ElementRef;
 
-  constructor() {
+  constructor(public appCounterService: AppCounterService) {
     // console.log('constructor');
   }
 

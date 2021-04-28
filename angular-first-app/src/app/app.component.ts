@@ -1,6 +1,7 @@
 /* tslint:disable:typedef */
 import {Component} from '@angular/core';
 import {PostComponent} from './post/post.component';
+import {AppCounterService} from './services/app-counter.service';
 
 export interface Post {
   title: string;
@@ -19,6 +20,9 @@ export class AppComponent {
   // e: number = 123.1234556678;
   str = 'hello world';
   filter = '';
+
+  constructor(public appCounterService: AppCounterService) {
+  }
 
   posts: Post[] = [
     {

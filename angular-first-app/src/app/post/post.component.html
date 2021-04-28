@@ -3,4 +3,10 @@
   <p>{{ myPost.text }}</p>
   <button class="btn" (click)="removePost()">&times;</button>
   <ng-content></ng-content>
+
+  <div class="card">
+    <div><strong>Global counter:</strong> {{ appCounterService.counter }}</div>
+    <button class="btn" (click)="appCounterService.increase()">+</button>
+    <button class="btn" (click)="appCounterService.decrease()">-</button>
+  </div>
 </div>
