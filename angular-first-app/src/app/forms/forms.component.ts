@@ -34,6 +34,7 @@ export class FormsComponent implements OnInit {
       console.log(this.form);
       const formDate = {...this.form.value};
       console.log(formDate);
+      this.form.reset();
     }
   }
 
