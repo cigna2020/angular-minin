@@ -19,7 +19,11 @@ export class FormsComponent implements OnInit {
   ngOnInit(): void {
     this.form = new FormGroup({
       email: new FormControl('', [Validators.email, Validators.minLength(6), Validators.required]),
-      password: new FormControl(null, [Validators.required, Validators.minLength(4)])
+      password: new FormControl(null, [Validators.required, Validators.minLength(4)]),
+      address: new FormGroup({
+        country: new FormControl('ua', Validators.required),
+        city: new FormControl('Киев', Validators.required)
+      })
     });
   }
 
