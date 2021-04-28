@@ -19,7 +19,7 @@ export class FormsComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      email: new FormControl('', [Validators.email, MyValidators.restrictedEmails, Validators.required]),
+      email: new FormControl('', [Validators.email, MyValidators.restrictedEmails, Validators.required], [MyValidators.uniqEmail]), // асинхронный валидатор передается третьим параметром
       password: new FormControl(null, [Validators.required, Validators.minLength(4)]),
       address: new FormGroup({
         country: new FormControl('ua', Validators.required),
