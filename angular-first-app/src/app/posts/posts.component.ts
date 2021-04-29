@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {PostsService} from '../posts.service';
-import {ActivatedRoute, Params} from '@angular/router';
+import {ActivatedRoute, Params, Router} from '@angular/router';
 
 @Component({
   selector: 'app-posts',
@@ -11,11 +11,26 @@ export class PostsComponent implements OnInit {
 
   showIds = false;
 
-  constructor(public postsService: PostsService, private route: ActivatedRoute) {}
+  constructor(
+    public postsService: PostsService,
+    private route: ActivatedRoute,
+    private router: Router) {}
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((params: Params) => {
       this.showIds = !!params.showIds;
+    });
+    this.route.fragment.subscribe(frag => {
+      console.log(frag);
+    });
+  }
+
+  showIdsProgram(): void {
+    this.router.navigate(['/posts'], {
+      queryParams: {
+        showIds: true
+      },
+      fragment: 'fragment-program'
     });
   }
 }

@@ -4,10 +4,11 @@
   class="btn"
   [routerLink]="['/posts']"
   [queryParams]="{showIds: true}"
+  fragment="fragment"
 >
   Show Ids
 </button>
-<button class="btn">
+<button class="btn" (click)="showIdsProgram()">
   Show Ids (program)
 </button>
 
