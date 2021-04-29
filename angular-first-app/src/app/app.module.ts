@@ -12,6 +12,9 @@ import {FormsComponent} from './forms/forms.component';
 import {HttpclientComponent} from './httpclient/httpclient.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {AuthInterceptor} from './httpclient/auth.interceptor';
+import { AboutComponent } from './about/about.component';
+import { AboutExtraComponent } from './about-extra/about-extra.component';
+import { HomeComponent } from './home/home.component';
 
 const INTERCEPTOR_PROVIDER: Provider = {
   provide: HTTP_INTERCEPTORS,
@@ -20,7 +23,7 @@ const INTERCEPTOR_PROVIDER: Provider = {
 }
 
 @NgModule({
-  declarations: [AppComponent, PostFormComponent, PostComponent, StyleDirective, IfnotDirective, FilterPipe, FormsComponent, HttpclientComponent],
+  declarations: [AppComponent, PostFormComponent, PostComponent, StyleDirective, IfnotDirective, FilterPipe, FormsComponent, HttpclientComponent, AboutComponent, AboutExtraComponent, HomeComponent],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule],
   providers: [INTERCEPTOR_PROVIDER],
   bootstrap: [AppComponent],
