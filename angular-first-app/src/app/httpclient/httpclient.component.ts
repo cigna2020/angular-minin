@@ -50,4 +50,9 @@ export class HttpclientComponent implements OnInit {
     this.httpService.removeTodo(id)
       .subscribe(todo => this.todosList = this.todosList.filter(t => t.id !== id));
   }
+
+  finishTodo(id: number): void {
+    this.httpService.completedTodo(id)
+      .subscribe(todo => this.todosList.find(t => t.id === id).completed = true);
+  }
 }
