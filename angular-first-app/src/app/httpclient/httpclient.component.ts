@@ -49,4 +49,9 @@ export class HttpclientComponent implements OnInit {
         this.loading = false;
       });
   }
+
+  deleteTodo(id: number): void {
+    this.http.delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
+      .subscribe(todo => this.todosList = this.todosList.filter(t => t.id !== id));
+  }
 }
