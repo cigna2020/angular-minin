@@ -15,6 +15,7 @@ export class HttpclientComponent implements OnInit {
 
   todoTitle = '';
   loading = false;
+  errorMessage = '';
 
   constructor(private httpService: HttpService) {
   }
@@ -43,7 +44,7 @@ export class HttpclientComponent implements OnInit {
       .subscribe(response => {
         this.todosList = response;
         this.loading = false;
-      });
+      }, error => this.errorMessage = error.message);
   }
 
   deleteTodo(id: number): void {
