@@ -15,6 +15,8 @@ import {AuthInterceptor} from './httpclient/auth.interceptor';
 import { AboutComponent } from './about/about.component';
 import { AboutExtraComponent } from './about-extra/about-extra.component';
 import { HomeComponent } from './home/home.component';
+import { PostsComponent } from './posts/posts.component';
+import {AppRoutingModule} from './app-routing.module';
 
 const INTERCEPTOR_PROVIDER: Provider = {
   provide: HTTP_INTERCEPTORS,
@@ -23,8 +25,8 @@ const INTERCEPTOR_PROVIDER: Provider = {
 }
 
 @NgModule({
-  declarations: [AppComponent, PostFormComponent, PostComponent, StyleDirective, IfnotDirective, FilterPipe, FormsComponent, HttpclientComponent, AboutComponent, AboutExtraComponent, HomeComponent],
-  imports: [BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule],
+  declarations: [AppComponent, PostFormComponent, PostComponent, StyleDirective, IfnotDirective, FilterPipe, FormsComponent, HttpclientComponent, AboutComponent, AboutExtraComponent, HomeComponent, PostsComponent],
+  imports: [BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule, AppRoutingModule],
   providers: [INTERCEPTOR_PROVIDER],
   bootstrap: [AppComponent],
 })
