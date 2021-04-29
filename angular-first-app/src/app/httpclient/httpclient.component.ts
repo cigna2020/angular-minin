@@ -17,6 +17,8 @@ export class HttpclientComponent implements OnInit {
 
   todosList: Todo[] = [];
 
+  todoTitle = '';
+
   constructor(private http: HttpClient) {
   }
 
@@ -26,4 +28,15 @@ export class HttpclientComponent implements OnInit {
     });
   }
 
+  addTitle(): void {
+    if (this.todoTitle.trim()) {
+      const newTodo: Todo = {
+        title: this.todoTitle,
+        completed: false
+      };
+      this.http.post<Todo>('https://jsonplaceholder.typicode.com/todos', newTodo)
+        .subscribe(todo => this.todosList.push(todo));
+      this.todoTitle = '';
+    }
+  }
 }
