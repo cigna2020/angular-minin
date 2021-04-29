@@ -17,6 +17,7 @@ import { AboutExtraComponent } from './about-extra/about-extra.component';
 import { HomeComponent } from './home/home.component';
 import { PostsComponent } from './posts/posts.component';
 import {AppRoutingModule} from './app-routing.module';
+import { PostRComponent } from './post-r/post-r.component';
 
 const INTERCEPTOR_PROVIDER: Provider = {
   provide: HTTP_INTERCEPTORS,
@@ -25,7 +26,7 @@ const INTERCEPTOR_PROVIDER: Provider = {
 }
 
 @NgModule({
-  declarations: [AppComponent, PostFormComponent, PostComponent, StyleDirective, IfnotDirective, FilterPipe, FormsComponent, HttpclientComponent, AboutComponent, AboutExtraComponent, HomeComponent, PostsComponent],
+  declarations: [AppComponent, PostFormComponent, PostComponent, StyleDirective, IfnotDirective, FilterPipe, FormsComponent, HttpclientComponent, AboutComponent, AboutExtraComponent, HomeComponent, PostsComponent, PostRComponent],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule, HttpClientModule, AppRoutingModule],
   providers: [INTERCEPTOR_PROVIDER],
   bootstrap: [AppComponent],
