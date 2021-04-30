@@ -6,11 +6,14 @@ import {PostsComponent} from './posts/posts.component';
 import {FormsComponent} from './forms/forms.component';
 import {HttpclientComponent} from './httpclient/httpclient.component';
 import {PostRComponent} from './post-r/post-r.component';
+import {AboutExtraComponent} from './about-extra/about-extra.component';
 
 // '' === http://localhost:4200
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'about', component: AboutComponent},
+  {path: 'about', component: AboutComponent, children: [
+      {path: 'extra', component: AboutExtraComponent}
+    ]},
   {path: 'posts', component: PostsComponent},
   {path: 'forms', component: FormsComponent},
   {path: 'requests', component: HttpclientComponent},
