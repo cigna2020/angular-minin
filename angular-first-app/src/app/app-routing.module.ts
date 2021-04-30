@@ -8,6 +8,7 @@ import {HttpclientComponent} from './httpclient/httpclient.component';
 import {PostRComponent} from './post-r/post-r.component';
 import {AboutExtraComponent} from './about-extra/about-extra.component';
 import {ErrorComponent} from './error/error.component';
+import {AuthGuard} from './auth.guard';
 
 // '' === http://localhost:4200
 const routes: Routes = [
@@ -15,7 +16,7 @@ const routes: Routes = [
   {path: 'about', component: AboutComponent, children: [
       {path: 'extra', component: AboutExtraComponent}
     ]},
-  {path: 'posts', component: PostsComponent},
+  {path: 'posts', component: PostsComponent, canActivate: [AuthGuard]},
   {path: 'forms', component: FormsComponent},
   {path: 'requests', component: HttpclientComponent},
   {path: 'post/:id', component: PostRComponent},

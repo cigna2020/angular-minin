@@ -2,6 +2,7 @@
 import {Component} from '@angular/core';
 import {PostComponent} from './post/post.component';
 import {AppCounterService} from './services/app-counter.service';
+import {AuthService} from './auth.service';
 
 export interface Post {
   title: string;
@@ -21,7 +22,7 @@ export class AppComponent {
   str = 'hello world';
   filter = '';
 
-  constructor(public appCounterService: AppCounterService) {
+  constructor(public appCounterService: AppCounterService, public auth: AuthService) {
   }
 
   posts: Post[] = [
