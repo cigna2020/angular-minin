@@ -7,6 +7,7 @@ import {FormsComponent} from './forms/forms.component';
 import {HttpclientComponent} from './httpclient/httpclient.component';
 import {PostRComponent} from './post-r/post-r.component';
 import {AboutExtraComponent} from './about-extra/about-extra.component';
+import {ErrorComponent} from './error/error.component';
 
 // '' === http://localhost:4200
 const routes: Routes = [
@@ -17,7 +18,9 @@ const routes: Routes = [
   {path: 'posts', component: PostsComponent},
   {path: 'forms', component: FormsComponent},
   {path: 'requests', component: HttpclientComponent},
-  {path: 'post/:id', component: PostRComponent}
+  {path: 'post/:id', component: PostRComponent},
+  {path: 'error', component: ErrorComponent},
+  {path: '**', redirectTo: '/error'}
 ];
 
 @NgModule({
